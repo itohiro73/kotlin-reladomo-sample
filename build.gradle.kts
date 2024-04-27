@@ -39,7 +39,6 @@ dependencies {
 }
 
 tasks.register("genReladomo") {
-    dependsOn("compileJava")
     doLast {
         ant.withGroovyBuilder {
             "taskdef"("name" to "genReladomo",
@@ -63,6 +62,7 @@ sourceSets {
 }
 
 tasks.withType<KotlinCompile> {
+    dependsOn("genReladomo")
     kotlinOptions {
         freeCompilerArgs += "-Xjsr305=strict"
         jvmTarget = "17"
