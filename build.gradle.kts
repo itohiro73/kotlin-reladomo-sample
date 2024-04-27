@@ -53,6 +53,20 @@ tasks.register("genReladomo") {
     }
 }
 
+tasks.register("genDdl") {
+    doLast {
+        ant.withGroovyBuilder {
+            "taskdef"("name" to "genDdl",
+                    "classpath" to reladomoGenTask.asPath,
+                    "classname" to "com.gs.fw.common.mithra.generator.dbgenerator.MithraDbDefinitionGenerator")
+
+            "genDdl"("xml" to "$projectDir/src/main/resources/reladomo/model/ReladomoClassList.xml",
+            "generatedDir" to "$projectDir/build/generated-db/sql",
+            "databaseType" to "postgres")
+        }
+    }
+}
+
 sourceSets {
     main {
         java {
