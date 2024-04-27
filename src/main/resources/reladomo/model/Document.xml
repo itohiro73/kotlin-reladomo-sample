@@ -1,0 +1,25 @@
+<MithraObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              objectType="transactional"
+              xsi:noNamespaceSchemaLocation="../config/mithraobject.xsd">
+    <PackageName>jp.itohiro.kotlinreladomo.domain.entity</PackageName>
+    <ClassName>Document</ClassName>
+    <DefaultTable>DOCUMENT</DefaultTable>
+
+    <AsOfAttribute name="processingDate" fromColumnName="IN_Z" toColumnName="OUT_Z"
+                   toIsInclusive="false"
+                   isProcessingDate="true"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+    />
+    <Attribute name="id" javaType="int" columnName="ID" primaryKey="true"
+               primaryKeyGeneratorStrategy="SimulatedSequence">
+        <SimulatedSequence sequenceName="Document"
+                           sequenceObjectFactoryName="jp.itohiro.kotlinreladomo.infrastructure.util.ObjectSequenceObjectFactory"
+                           hasSourceAttribute="false"
+                           batchSize="1"
+                           initialValue="1"
+                           incrementSize="1"/>
+    </Attribute>
+    <Attribute name="title" javaType="String" columnName="TITLE" maxLength="200"/>
+    <Attribute name="content" javaType="String" columnName="CONTENT"/>
+</MithraObject>
