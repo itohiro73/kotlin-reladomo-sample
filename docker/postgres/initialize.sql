@@ -1,12 +1,23 @@
-CREATE TABLE ITEM (
-                      ID integer NOT NULL,
-                      INCOME_EXPENSE varchar(255),
-                      ACCOUNT varchar(255),
-                      DESCRIPTION text,
-                      BALANCE_TYPE varchar(255),
-                      VALUE_AMOUNT integer,
-                      DATE date,
-                      CREATED_AT timestamp,
-                      UPDATED_AT timestamp
+drop table if exists DOCUMENT;
+
+create table DOCUMENT
+(
+    ID int not null,
+    TITLE varchar(200),
+    CONTENT varchar(255),
+    IN_Z timestamp not null,
+    OUT_Z timestamp not null
 );
+
+alter table DOCUMENT add constraint DOCUMENT_PK primary key (ID, OUT_Z);
+
+drop table if exists OBJECT_SEQUENCE;
+
+create table OBJECT_SEQUENCE
+(
+    SEQUENCE_NAME varchar(64) not null,
+    NEXT_VALUE bigint
+);
+
+alter table OBJECT_SEQUENCE add constraint OBJECT_SEQUENCE_PK primary key (SEQUENCE_NAME);
 

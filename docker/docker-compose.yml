@@ -9,8 +9,8 @@ services:
     environment:
       POSTGRES_PASSWORD: aGVsBTGYhBPjFXCz
     volumes:
-      - familybook-postgres-data:/var/lib/postgresql/data
+      - local-postgres-data:/var/lib/postgresql/data
       - ./postgres/initialize.sql:/docker-entrypoint-initdb.d/initialize.sql
 
 volumes:
-  familybook-postgres-data:
+  local-postgres-data:
