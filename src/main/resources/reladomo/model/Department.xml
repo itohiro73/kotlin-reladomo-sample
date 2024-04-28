@@ -1,0 +1,25 @@
+<MithraObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              objectType="transactional"
+              xsi:noNamespaceSchemaLocation="../config/mithraobject.xsd">
+    <PackageName>jp.itohiro.sample.domain.entity</PackageName>
+    <ClassName>Department</ClassName>
+    <DefaultTable>DEPARTMENT</DefaultTable>
+
+    <AsOfAttribute name="applicableRange" fromColumnName="APPLICABLE_START" toColumnName="APPLICABLE_END"
+                   toIsInclusive="false"
+                   isProcessingDate="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+    />
+    <Attribute name="departmentCode" javaType="int" columnName="DEPARTMENT_CODE" primaryKey="true"
+               primaryKeyGeneratorStrategy="SimulatedSequence">
+        <SimulatedSequence sequenceName="DEPARTMENT"
+                           sequenceObjectFactoryName="jp.itohiro.sample.infra.util.ObjectSequenceObjectFactory"
+                           hasSourceAttribute="false"
+                           batchSize="1"
+                           initialValue="1"
+                           incrementSize="1"/>
+    </Attribute>
+    <Attribute name="departmentName" javaType="String" columnName="DEPARTMENT_NAME" maxLength="200"/>
+    <Attribute name="departmentType" javaType="String" columnName="DEPARTMENT_TYPE" maxLength="200"/>
+</MithraObject>

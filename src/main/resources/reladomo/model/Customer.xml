@@ -1,0 +1,28 @@
+<MithraObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              objectType="transactional"
+              xsi:noNamespaceSchemaLocation="../config/mithraobject.xsd">
+    <PackageName>jp.itohiro.sample.domain.entity</PackageName>
+    <ClassName>Customer</ClassName>
+    <DefaultTable>CUSTOMER</DefaultTable>
+
+    <AsOfAttribute name="applicableRange" fromColumnName="APPLICABLE_START" toColumnName="APPLICABLE_END"
+                   toIsInclusive="false"
+                   isProcessingDate="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+    />
+    <Attribute name="customerCode" javaType="int" columnName="CUSTOMER_CODE" primaryKey="true"
+               primaryKeyGeneratorStrategy="SimulatedSequence">
+        <SimulatedSequence sequenceName="CUSTOMER"
+                           sequenceObjectFactoryName="jp.itohiro.sample.infra.util.ObjectSequenceObjectFactory"
+                           hasSourceAttribute="false"
+                           batchSize="1"
+                           initialValue="1"
+                           incrementSize="1"/>
+    </Attribute>
+    <Attribute name="customerName" javaType="String" columnName="CUSTOMER_NAME" maxLength="200"/>
+    <Attribute name="salesDepartmentCode" javaType="int" columnName="SALES_DEPARTMENT_CODE" maxLength="200"/>
+    <Relationship name="salesDepartment" relatedObject="Department" cardinality="one-to-one">
+        this.salesDepartmentCode = Department.departmentCode
+    </Relationship>
+</MithraObject>

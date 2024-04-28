@@ -13,5 +13,7 @@
 
         <MithraObjectConfiguration className="jp.itohiro.sample.domain.entity.ObjectSequence" cacheType="partial"/>
         <MithraObjectConfiguration className="jp.itohiro.sample.domain.entity.Document" cacheType="partial"/>
+        <MithraObjectConfiguration className="jp.itohiro.sample.domain.entity.Customer" cacheType="partial"/>
+        <MithraObjectConfiguration className="jp.itohiro.sample.domain.entity.Department" cacheType="partial"/>
     </ConnectionManager>
 </MithraRuntime>
