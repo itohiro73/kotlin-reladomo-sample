@@ -1,7 +1,7 @@
 <MithraObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               objectType="transactional"
               xsi:noNamespaceSchemaLocation="../config/mithraobject.xsd">
-    <PackageName>jp.itohiro.kotlinreladomo.domain.entity</PackageName>
+    <PackageName>jp.itohiro.sample.domain.entity</PackageName>
     <ClassName>Document</ClassName>
     <DefaultTable>DOCUMENT</DefaultTable>
 
@@ -14,7 +14,7 @@
     <Attribute name="id" javaType="int" columnName="ID" primaryKey="true"
                primaryKeyGeneratorStrategy="SimulatedSequence">
         <SimulatedSequence sequenceName="Document"
-                           sequenceObjectFactoryName="jp.itohiro.kotlinreladomo.infrastructure.util.ObjectSequenceObjectFactory"
+                           sequenceObjectFactoryName="jp.itohiro.sample.infra.util.ObjectSequenceObjectFactory"
                            hasSourceAttribute="false"
                            batchSize="1"
                            initialValue="1"

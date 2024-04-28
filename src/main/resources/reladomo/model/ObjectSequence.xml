@@ -2,7 +2,7 @@
               objectType="transactional"
               xsi:noNamespaceSchemaLocation="../config/mithraobject.xsd">
 
-    <PackageName>jp.itohiro.kotlinreladomo.domain.entity</PackageName>
+    <PackageName>jp.itohiro.sample.domain.entity</PackageName>
     <ClassName>ObjectSequence</ClassName>
     <DefaultTable>OBJECT_SEQUENCE</DefaultTable>
 

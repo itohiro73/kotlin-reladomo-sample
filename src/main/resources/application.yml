@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: kotlin-reladomo-spring-boot
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:aGVsBTGYhBPjFXCz}

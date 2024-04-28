@@ -1,4 +1,4 @@
-package jp.itohiro.kotlinreladomo.domain.entity;
+package jp.itohiro.sample.domain.entity;
 public class DocumentDatabaseObject extends DocumentDatabaseObjectAbstract
 {
 }

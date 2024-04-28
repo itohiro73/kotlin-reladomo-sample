@@ -1,4 +1,4 @@
-package jp.itohiro.kotlinreladomo.domain.entity;
+package jp.itohiro.sample.domain.entity;
 import java.sql.Timestamp;
 public class Document extends DocumentAbstract
 {

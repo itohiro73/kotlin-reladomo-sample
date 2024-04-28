@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <MithraRuntime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:noNamespaceSchemaLocation="mithraruntime.xsd">
-    <ConnectionManager className="jp.itohiro.kotlinreladomo.infrastructure.database.DBConnectionManager">
-        <Property name="jdbcDriverClassName" value="database"/>
-        <Property name="jdbcSubProtocol" value="h2"/>
-<!--        <Property name="url" value="localhost"/>-->
-<!--        <Property name="port" value="5432"/>-->
-<!--        <Property name="database" value="jdbc:h2:mem:testdb"/>-->
-<!--        <Property name="username" value="testuser"/>-->
-<!--        <Property name="password" value="testuser"/>-->
+    <ConnectionManager className="jp.itohiro.sample.infra.db.DBConnectionManager">
+        <Property name="jdbcDriverClassName" value="org.postgresql.Driver"/>
+        <Property name="jdbcSubProtocol" value="postgresql"/>
+        <Property name="host" value="localhost"/>
+        <Property name="port" value="5432"/>
+        <Property name="database" value="postgres"/>
+        <Property name="username" value="postgres"/>
+        <Property name="password" value="aGVsBTGYhBPjFXCz"/>
         <Property name="timeZone" value="Asia/Tokyo"/>
-        <!--
-        <Property name="initialSize" value="1"/>
-        <Property name="poolSize" value="0"/>
-        -->
 
-        <MithraObjectConfiguration className="jp.itohiro.kotlinreladomo.domain.entity.ObjectSequence" cacheType="partial"/>
-        <MithraObjectConfiguration className="jp.itohiro.kotlinreladomo.domain.entity.Document" cacheType="partial"/>
+        <MithraObjectConfiguration className="jp.itohiro.sample.domain.entity.ObjectSequence" cacheType="partial"/>
+        <MithraObjectConfiguration className="jp.itohiro.sample.domain.entity.Document" cacheType="partial"/>
     </ConnectionManager>
 </MithraRuntime>

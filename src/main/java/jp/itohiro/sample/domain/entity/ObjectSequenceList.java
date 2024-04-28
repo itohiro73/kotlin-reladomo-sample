@@ -1,4 +1,4 @@
-package jp.itohiro.kotlinreladomo.domain.entity;
+package jp.itohiro.sample.domain.entity;
 import com.gs.fw.finder.Operation;
 import java.util.*;
 public class ObjectSequenceList extends ObjectSequenceListAbstract
