@@ -20,8 +20,14 @@ object DateUtils {
         return DATE_TIME_FORMATTER_FULL.print(ts.getTime())
     }
 
-    fun parse(dateTimeString: String?): Timestamp {
-        val dateTime: DateTime = DATE_TIME_FORMATTER.parseDateTime(dateTimeString+"01")
+    fun 適用終了年月(yearMonthString: String?): Timestamp {
+        val dateTime: DateTime = DATE_TIME_FORMATTER.parseDateTime(yearMonthString+"01")
+        val untilDateTime = dateTime.plusMonths(1)
+        return Timestamp(untilDateTime.toDateTime().millis)
+    }
+
+    fun 適用年月(yearMonthString: String?): Timestamp {
+        val dateTime: DateTime = DATE_TIME_FORMATTER.parseDateTime(yearMonthString+"01")
         return Timestamp(dateTime.toDateTime().millis)
     }
 
