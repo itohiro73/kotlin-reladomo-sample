@@ -5,7 +5,7 @@
     <ClassName>Department</ClassName>
     <DefaultTable>DEPARTMENT</DefaultTable>
 
-    <AsOfAttribute name="applicableRange" fromColumnName="APPLICABLE_START" toColumnName="APPLICABLE_END"
+    <AsOfAttribute name="validTime" fromColumnName="VALID_TIME_FROM" toColumnName="VALID_TIME_TO"
                    toIsInclusive="false"
                    isProcessingDate="false"
                    infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
