@@ -1,0 +1,31 @@
+<MithraObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              objectType="transactional"
+              xsi:noNamespaceSchemaLocation="../config/mithraobject.xsd">
+    <PackageName>jp.itohiro.sample.domain.entity</PackageName>
+    <ClassName>Product</ClassName>
+    <DefaultTable>PRODUCT</DefaultTable>
+
+    <AsOfAttribute name="validTime" fromColumnName="VALID_TIME_FROM" toColumnName="VALID_TIME_TO"
+                   toIsInclusive="false"
+                   isProcessingDate="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+    />
+    <AsOfAttribute name="transactionTime" fromColumnName="TRANSACTION_TIME_IN" toColumnName="TRANSACTION_TIME_OUT"
+                   toIsInclusive="false"
+                   isProcessingDate="true"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+    />
+    <Attribute name="productCode" javaType="int" columnName="PRODUCT_CODE" primaryKey="true"
+               primaryKeyGeneratorStrategy="SimulatedSequence">
+        <SimulatedSequence sequenceName="PRODUCT"
+                           sequenceObjectFactoryName="jp.itohiro.sample.infra.util.ObjectSequenceObjectFactory"
+                           hasSourceAttribute="false"
+                           batchSize="1"
+                           initialValue="1"
+                           incrementSize="1"/>
+    </Attribute>
+    <Attribute name="productName" javaType="String" columnName="PRODUCT_NAME" maxLength="200"/>
+    <Attribute name="price" javaType="int" columnName="PRICE"/>
+</MithraObject>

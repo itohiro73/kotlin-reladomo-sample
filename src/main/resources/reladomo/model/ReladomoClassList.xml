@@ -5,4 +5,5 @@
     <MithraObjectResource name="Document"/>
     <MithraObjectResource name="Customer"/>
     <MithraObjectResource name="Department"/>
+    <MithraObjectResource name="Product"/>
 </Mithra>
